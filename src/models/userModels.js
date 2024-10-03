@@ -1,7 +1,8 @@
-import db from "../config/db"
-import bcrypt from "bcrypt"
+import mongoose from "mongoose";
+import db from "../config/db.js"
+import bcrypt from "bcryptjs"
 
-const userSchema = new db.Schema({
+const userSchema = new mongoose.Schema({
     nome: {
         type: String,
         required: true,
@@ -55,7 +56,7 @@ userSchema.methods.senhaCorreta = async function(senha){
   return await bcrypt.compare(senha,this.password)
 }
 
-const User = db.model("User", userSchema)
+const User = mongoose.model("User", userSchema)
 
 
 export default User

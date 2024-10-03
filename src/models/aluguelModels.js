@@ -1,13 +1,14 @@
-import db from "../config/db"
+import mongoose from "mongoose"
+import db from "../config/db.js"
 
-const aluguelSchema = new db.Schema({
+const aluguelSchema = new mongoose.Schema({
     alugadoPor:{
-        type: db.Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         ref:'User',
         required: true,
     },
     filmeAlugado:{
-        type:db.Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         ref:'Filme',
         required: true,
     },
@@ -21,6 +22,6 @@ const aluguelSchema = new db.Schema({
     }
 })
 
-const Aluguel = db.model("Aluguel", aluguelSchema)
+const Aluguel = mongoose.model("Aluguel", aluguelSchema)
 
 export default Aluguel

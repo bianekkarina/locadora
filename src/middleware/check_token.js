@@ -1,4 +1,4 @@
-import jwtService from "../services/jwt-services"
+import jwtService from "../services/jwt-services.js"
 
 function check_token(req, res, next){
     const auth_header = req.headers["authorization"]

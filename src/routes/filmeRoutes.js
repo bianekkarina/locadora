@@ -5,12 +5,10 @@ import {
     show,
     update,
     destroy,
-    signup,
-    login
-} from "../controller/filmesController"
+} from "../controller/filmesController.js"
 
-import check_token from "../middleware/check_token"
-import check_role from "../middleware/check_role"
+import check_token from "../middleware/check_token.js"
+import check_role from "../middleware/check_role.js"
 
 const router = Router()
 

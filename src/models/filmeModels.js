@@ -1,6 +1,7 @@
-import db from "../config/db"
+import mongoose from "mongoose"
+import db from "../config/db.js"
 
-const filmeSchema = new db.Schema({
+const filmeSchema = new mongoose.Schema({
     nome:{ 
     type: String,
     required: true,
@@ -20,6 +21,6 @@ const filmeSchema = new db.Schema({
     }
 })
 
-const Filme = db.model("Filme", filmeSchema)
+const Filme = mongoose.model("Filme", filmeSchema)
 
 export default Filme

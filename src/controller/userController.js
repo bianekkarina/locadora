@@ -1,5 +1,5 @@
-import User from "../models/userModels"
-import jwtServices from "../services/jwt-services"
+import User from "../models/userModels.js"
+import jwtServices from "../services/jwt-services.js"
 
 export const store = async (req, res) =>{
     try{

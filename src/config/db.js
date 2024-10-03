@@ -2,12 +2,12 @@ import mongoose from 'mongoose'
 
 const connectDB = async() => {
     try{
-        await mongoose.connect(
-        `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.CLUSTER_ADDRESS}/${process.env.DB_NAME}`)
+        await mongoose.connect('mongodb://localhost:27017/locadora')
+        console.log("MongoDB conectado com sucesso.")
     } catch(error){
         console.error("Erro ao conectar ao mongodb:", error)
     }
 }
 connectDB()
 
-export default mongoose
+export default connectDB

@@ -1,11 +1,12 @@
 import express from "express"
 import "dotenv/config"
-import connectDB from "./config/db"
-import userRoutes from "./routes/userRoutes"
-import filmeRoutes from "./routes/filmeRoutes"
-import aluguelRoutes from "./routes/aluguelRoutes"
+import connectDB from "./config/db.js"
+import userRoutes from "./routes/userRoutes.js"
+import filmeRoutes from "./routes/filmeRoutes.js"
+import aluguelRoutes from "./routes/aluguelRoutes.js"
+import { configDotenv } from "dotenv"
 
-configDotenv.config()
+configDotenv()
 connectDB()
 
 const app = express()
